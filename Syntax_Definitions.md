@@ -1,7 +1,6 @@
 _[Sublime Text官方说明文档](https://www.sublimetext.com/docs/3/syntax.html)_
 
-Sublime Text可以使用 *.sublime-syntax* 或者 **.tmLanguage** 文件来定义语法高亮。本文档主要介绍 _.sublime-syntax_ 的用法。
-__a__
+Sublime Text可以使用 *.sublime-syntax* 或者 *.tmLanguage* 文件来定义语法高亮。本文档主要介绍 *.sublime-syntax* 的用法。
 
 # 概述
 Sublime语法文件是一个YAML文件，有一个小的头信息，接下来是一个语法环境列表。每个语法环境都包含一个pattern列表，描述如何高亮代码，如何改变当前代码内容。
@@ -25,7 +24,7 @@ contexts:
 这个语法文件包含了一个语法环境，`main`，将会匹配 `[if, else, for, while]` 等关键字，并指定作用域为 `keyword.control.c` 。有一个特殊的代码标识名 `main`：每个语法必须声名 `main`，它将会在文件的开头使用。
 `match`关键字的值是一个正则表达式，使用 `ruby`语法。在上面的例子中，`\b`用于确保只匹配整个单词，而不会匹配到`elsewhere`中的`else`。
 
-注意：由于YMAL语法，制表符不能出现在 ++.sublime-syntax++ 文件中。
+注意：由于YMAL语法，制表符不能出现在 *.sublime-syntax* 文件中。
 # 头部 -- header
 头部区域可以出现的关键字如下：
 
@@ -142,11 +141,11 @@ contexts:
       scope: punctuation.definition.tag.end
 ```
 
-注意上面第一条规则。它指明当我们遇到 `<script>` 标签时，++JavaScript.sublime-syntax++ 中的 `main` 环境将会被推入当前的上下文栈中。它还定义了另一个关键字 `with_prototype`。它包含一个模式列表，这些模式将被插入到 ++JavaScript.sublime-syntax++ 中定义的所有上下文中。注意的是， `with_prototype` 从概念上和 `prototype` 相类似，无论如何，它总是会被插入到每一个引用到的上下文中，而不考虑它们的 `meta_include_prototype` 设置。
+注意上面第一条规则。它指明当我们遇到 `<script>` 标签时 *JavaScript.sublime-syntax* 中的 `main` 环境将会被推入当前的上下文栈中。它还定义了另一个关键字 `with_prototype`。它包含一个模式列表，这些模式将被插入到 *JavaScript.sublime-syntax* 中定义的所有上下文中。注意的是， `with_prototype` 从概念上和 `prototype` 相类似，无论如何，它总是会被插入到每一个引用到的上下文中，而不考虑它们的 `meta_include_prototype` 设置。
 
 在这个case中，当在接下来的文字中遇到 `</script>` 标签，插入的模式将被弹出当前上下文环境。注意，它并不是匹配实际上的 `</script>` 标签，而是使用了先行断言，这里有两个关键的作用：它不仅允许HTML规则匹配了对应的结束标签，正确地高亮代码，还确保 `Javascript` 的上下文环境跳出当前的上下文环境。例如，上下文环境栈还在 `Javascript` 字符串的中，当遇到 `</script>` 标签， `Javascript` 字符串和 `main` 上下文环境都将被弹出。
 
-注意，虽然 Sublime Text 同时支持 ++.sublime-syntax++ ++.tmLanguage++ 两种语法文件，但是对于在 ++.sublime-syntax++ 文件中包含 ++.tmLanguage++ 文件这种方式，是不支持的。
+注意，虽然 Sublime Text 同时支持 *.sublime-syntax* *.tmLanguage* 两种语法文件，但是对于在 *.sublime-syntax* 文件中包含 *.tmLanguage* 文件这种方式，是不支持的。
 
 另一个常见的场景是，在HTML中包含一个模板语言。下面是一个例子，这次是 `Jinja` 的一小部分代码。
 
@@ -186,7 +185,7 @@ contexts:
       scope: keyword.control
 ```
 
-变量必须在 ++.sublime-syntax++ 文件的顶部区域进行定义，在正则中使用  `{{varname}}` 来引用。变量本身可以包含其他变量。 注意，任何不匹配 `{{[A-Za-z0-9_]+}}` 的文本，都不会被认为是变量，所以正则还是可以包含 `{{` 字符的。
+变量必须在 *.sublime-syntax* 文件的顶部区域进行定义，在正则中使用  `{{varname}}` 来引用。变量本身可以包含其他变量。 注意，任何不匹配 `{{[A-Za-z0-9_]+}}` 的文本，都不会被认为是变量，所以正则还是可以包含 `{{` 字符的。
 
 # Selected Examples
 
