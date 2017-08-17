@@ -1,6 +1,7 @@
 _[Sublime Text官方说明文档](https://www.sublimetext.com/docs/3/syntax.html)_
 
-Sublime Text可以使用 ++.sublime-syntax++ 或者 ++.tmLanguage++ 文件来定义语法高亮。本文档主要介绍 ++.sublime-syntax++ 的用法。
+Sublime Text可以使用 *.sublime-syntax* 或者 **.tmLanguage** 文件来定义语法高亮。本文档主要介绍 _.sublime-syntax_ 的用法。
+__a__
 
 # 概述
 Sublime语法文件是一个YAML文件，有一个小的头信息，接下来是一个语法环境列表。每个语法环境都包含一个pattern列表，描述如何高亮代码，如何改变当前代码内容。
