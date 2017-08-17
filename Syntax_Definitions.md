@@ -1,4 +1,4 @@
-++[Sublime Text官方说明文档](https://www.sublimetext.com/docs/3/syntax.html)++
++[Sublime Text官方说明文档](https://www.sublimetext.com/docs/3/syntax.html)+
 
 Sublime Text可以使用 ++.sublime-syntax++ 或者 ++.tmLanguage++ 文件来定义语法高亮。本文档主要介绍 ++.sublime-syntax++ 的用法。
 
