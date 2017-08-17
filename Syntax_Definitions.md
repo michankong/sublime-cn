@@ -340,7 +340,7 @@ int square(int x)
 
 要编写一个这样的测试文件，遵循下面的规则：
 
-1. 确保测试文件命名以 ++syntax_test_++。
+1. 确保测试文件命名以 *syntax_test_*。
 2. 确保文件保存在 Packages 目录下，最好和对应的 .sublime_syntax 文件同一级目录。
 3. 确保文件的第一行以 `<comment_token> SYNTAX TEST "<syntax_file>"` 开始。注意这里的语法文件包括 ` .sublime-syntax` `.tmLanguage`。
 
